@@ -10,15 +10,15 @@ export const RegisterScreen = () => {
 
         <SafeAreaView>
             <ScrollView>
-            <Appbar>
-            <Appbar.BackAction />
-            <Appbar.Content title="Registeration" />
-        </Appbar>
+                <Appbar>
+                    <Appbar.BackAction />
+                    <Appbar.Content title="Registeration" />
+                </Appbar>
                 <View style={registerStyle.content}>
                     <TextInput label="Name" />
                     <TextInput label="Email" keyboardType="email-address" />
                     <TextInput label="Password" secureTextEntry={true} right={<TextInput.Icon icon="eye" color={registerStyle.icon.color} />} />
-                    <TextInput label="Confirm password" secureTextEntry={true} right={<TextInput.Icon icon="eye" color={registerStyle.icon.color}/>} />
+                    <TextInput label="Confirm password" secureTextEntry={true} right={<TextInput.Icon icon="eye" color={registerStyle.icon.color} />} />
                     <TextInput label="Phone number" keyboardType="phone-pad" />
                     <Button mode="contained" style={registerStyle.button}>Register</Button>
                 </View>
