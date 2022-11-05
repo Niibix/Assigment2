@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { theme } from "../../../../App.style";
+
 
 export const homeStyle = StyleSheet.create({
     flex: {
@@ -15,12 +15,6 @@ export const homeStyle = StyleSheet.create({
         width: 35,
         height: 35,
     },
-    icon: {
-        color: theme.colors.primary,
-        marginTop: 20,
-    },
-    cancelButton:{
-        marginBottom: 10,
-    }
+
 
 })

@@ -1,15 +1,29 @@
 import React from 'react';
-import { Image, SafeAreaView, View } from 'react-native';
+import { Image, SafeAreaView, } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
-import { Button, Card, FAB, IconButton, List, Title } from 'react-native-paper';
+import { FAB,Appbar, Menu } from 'react-native-paper';
+import { ConfirmDeliveryCardComponent } from '../components/confirm-delivery-card/confirm-delivery-card.component';
+import { SerachingDeliveryPersonComponent } from '../components/searching-delivery-person/searching-delivery-person.component';
 import { homeStyle } from './home.style';
 
 const HomeScreen = () => {
 
-  const state = 2;
+  const state = 3;
 
   return (
     <SafeAreaView style={homeStyle.flex}>
+      <Appbar>
+        <Menu
+        visible={true}
+        onDismiss={()=> {}}
+        anchor={
+          <Appbar.Action
+          icon="menu" />
+        }>
+
+        </Menu>
+        <Appbar.Content title="Bike Boyz" />
+      </Appbar>
       <MapView
         style={homeStyle.flex}
         initialRegion={{
@@ -47,31 +61,10 @@ const HomeScreen = () => {
         }
         {
           state == 2 ?
-            <Card>
-              <Card.Content>
-                <List.Item
-                  title="20 €"
-                  description="Total price of the delivery"
-                  left={() =>
-                    <IconButton
-                      icon="bike"
-                      size={30}
-                      Style={homeStyle.icon}
-                      color={homeStyle.icon.color} />
-                  }
-                  right={() =>
-                    <View>
-                      <Button
-                      styker={homeStyle.cancelButton}>Cancel</Button>
-                      <Button mode="contained">Confirm</Button>
-                    </View>
-                  }
-                />
-              </Card.Content>
-            </Card>
+            <ConfirmDeliveryCardComponent />
             : null
         }
-                {
+        {
           state == 2 ?
             <>
               <Marker
@@ -80,9 +73,9 @@ const HomeScreen = () => {
               </Marker>
               <Marker
                 description="Destination"
-                coordinate={{ latitude: 60.451813, longitude: 22.266630 }}>  
+                coordinate={{ latitude: 60.451813, longitude: 22.266630 }}>
               </Marker>
-              </>
+            </>
             : null
         }
 
@@ -93,6 +86,11 @@ const HomeScreen = () => {
           <FAB
             icon="plus"
             style={homeStyle.fab} />
+          : null
+      }
+      {
+        state == 3 ?
+          <SerachingDeliveryPersonComponent />
           : null
       }
 
