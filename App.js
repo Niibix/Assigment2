@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import {Provider as PaperProvider, TextInput} from 'react-native-paper'
+import {theme} from './App.style'
 import { LoginScreen } from './app/screens/login/login.screen';
+import { RegisterScreen } from './app/screens/login/register/register.screen';
 
 
 export default function App() {
   return (
-    <PaperProvider>
-      <LoginScreen/>
+    <PaperProvider theme={theme}>
+      <RegisterScreen />
     </PaperProvider>
   
 
