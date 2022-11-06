@@ -6,6 +6,10 @@ import { registerStyle } from "./register.style";
 
 export const RegisterScreen = () => {
 
+    const register = ({navigation}) => {
+            navigation.navigate("Home");
+    }
+
     return (
 
         <SafeAreaView>
@@ -20,7 +24,7 @@ export const RegisterScreen = () => {
                     <TextInput label="Password" secureTextEntry={true} right={<TextInput.Icon icon="eye" color={registerStyle.icon.color} />} />
                     <TextInput label="Confirm password" secureTextEntry={true} right={<TextInput.Icon icon="eye" color={registerStyle.icon.color} />} />
                     <TextInput label="Phone number" keyboardType="phone-pad" />
-                    <Button mode="contained" style={registerStyle.button}>Register</Button>
+                    <Button onClick={register} mode="contained" style={registerStyle.button}>Register</Button>
                 </View>
             </ScrollView>
         </SafeAreaView>
