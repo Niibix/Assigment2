@@ -12,7 +12,7 @@ import { RegisterScreen } from './app/screens/login/register/register.screen';
 export default function App() {
   return (
     <PaperProvider theme={theme}>
-      <AppNavigator/>
+      <DeliveriesScreen/>
     </PaperProvider>
   
 

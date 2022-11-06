@@ -5,7 +5,8 @@ import { loginStyle } from "./login.style";
 
 export const LoginScreen = () => {
 
-    const login = () => {
+    const login = (navigation) => {
+        navigation.navigate('Login')
 
     }
 
