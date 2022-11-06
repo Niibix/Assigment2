@@ -3,9 +3,10 @@ import { SafeAreaView, View } from 'react-native'
 import { Button, Card, TextInput } from "react-native-paper";
 import { loginStyle } from "./login.style";
 
+
 export const LoginScreen = () => {
 
-    const login = (navigation) => {
+    const login = ({navigation}) => {
         navigation.navigate('Login')
 
     }
