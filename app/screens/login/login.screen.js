@@ -5,12 +5,12 @@ import { loginStyle } from "./login.style";
 
 export const LoginScreen = () => {
 
+    const login = () => {
+
+    }
+
     return (
         <SafeAreaView style={loginStyle.content}>
-            <Appbar>
-                <Appbar.BackAction />
-                <Appbar.Content title="Login" />
-            </Appbar>
             <View style={loginStyle.view}>
                 <Card>
                     <Card.Title title="Login" titleStyle={loginStyle.cardTitle}></Card.Title>
@@ -18,7 +18,7 @@ export const LoginScreen = () => {
                         <TextInput label="Email" keyboardType="email-address"></TextInput>
                         <TextInput label="Password" secureTextEntry={true}></TextInput>
                         <Button style={loginStyle.cardButton}>Forgot email or password</Button>
-                        <Button mode="contained" style={loginStyle.cardButton}>Login</Button>
+                        <Button onPress={login} mode="contained" style={loginStyle.cardButton}>Login</Button>
                         <Button style={loginStyle.cardButton}>Register</Button>
                     </Card.Content>
                 </Card>
